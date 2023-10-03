@@ -1,6 +1,5 @@
 import pytest
-import conftest
-from selenium.webdriver.common.by import By
+from pages.home_page import HomePage
 from pages.login_page import LoginPage 
 
 
@@ -8,9 +7,8 @@ from pages.login_page import LoginPage
 @pytest.mark.login
 class TestCT02:
     def testct02_login_valid(self):
-        driver = conftest.driver
         login_page = LoginPage()
+        home_page = HomePage()
         
         login_page.login("standard_user","secret_sauce")
-
-        assert driver.find_element(By.XPATH, "//span[@class='title']").is_displayed()
+        home_page.verify_element_with_success()
