@@ -17,5 +17,8 @@ class LoginPage(BasePage):
         self.write(self.password_field, password)
         self.click(self.login_button)
         
-    def verify_message_error_login(self):
+    def verify_message_error_login_existing(self):
         self.verify_existing_element(self.error_mensage_login)
+        
+    def verify_text_message_error_login(self, text_expected):
+        assert self.get_text_element(self.error_mensage_login) == text_expected
