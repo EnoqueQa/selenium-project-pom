@@ -18,4 +18,4 @@ class LoginPage(BasePage):
         self.click(self.login_button)
         
     def verify_message_error_login(self):
-        self.find_element(self.error_mensage_login)
+        self.verify_existing_element(self.error_mensage_login)
