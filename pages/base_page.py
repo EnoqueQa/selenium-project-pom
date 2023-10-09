@@ -24,7 +24,6 @@ class BasePage:
         assert self.find_element(locator).is_displayed(), f"The element {'locator'} was not displayed"
         
     def get_text_element(self, locator):
-        self.wait_element_appear(locator)
         return self.find_element(locator).text
     
     def wait_element_appear(self, locator, timeout=10):

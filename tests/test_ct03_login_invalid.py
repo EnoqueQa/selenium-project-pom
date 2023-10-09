@@ -3,7 +3,7 @@ from pages.login_page import LoginPage
 
 
 @pytest.mark.usefixtures("setup_teardown")
-@pytest.mark.login
+@pytest.mark.login_invalid
 class TestCT03:
     def testct03_login_invalid(self):
         expected_error_message = "Epic sadface: Username and password do not match any user in this service"
