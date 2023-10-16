@@ -29,8 +29,9 @@ class TestCT01:
         #login
         login_page.login("standard_user","secret_sauce")
 
-        #Adding backpack to cart and checking if it has been added
-        home_page.add_to_cart(product_1)
+        #Adding backpack to cart
+        home_page.click_product(product_1)
+        home_page.click_button_add_to_cart()
         
         #Checking that the backpack has been added
         home_page.access_the_cart()
@@ -40,7 +41,8 @@ class TestCT01:
         cart_page.click_continue_shopping()
 
         #Adding Onesie to cart and checking if it has been added
-        home_page.add_to_cart(product_2)
+        home_page.click_product(product_2)
+        home_page.click_button_add_to_cart()
         
         #Access the cart
         home_page.access_the_cart()
